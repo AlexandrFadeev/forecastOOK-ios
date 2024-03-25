@@ -19,6 +19,10 @@
 		FA84E7402BB212650083AEDB /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84E73F2BB212650083AEDB /* Environment.swift */; };
 		FA84E7422BB217710083AEDB /* EnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84E7412BB217710083AEDB /* EnvironmentTests.swift */; };
 		FA84E7452BB219C90083AEDB /* Test-API-Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA84E7432BB219220083AEDB /* Test-API-Keys.plist */; };
+		FA84E7472BB21BBB0083AEDB /* Localtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84E7462BB21BBB0083AEDB /* Localtion.swift */; };
+		FA84E7492BB21D710083AEDB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84E7482BB21D710083AEDB /* Endpoint.swift */; };
+		FA84E74C2BB224E40083AEDB /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84E74B2BB224E40083AEDB /* Weather.swift */; };
+		FA84E74E2BB2287D0083AEDB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84E74D2BB2287D0083AEDB /* Errors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		FA84E73F2BB212650083AEDB /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		FA84E7412BB217710083AEDB /* EnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
 		FA84E7432BB219220083AEDB /* Test-API-Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-API-Keys.plist"; sourceTree = "<group>"; };
+		FA84E7462BB21BBB0083AEDB /* Localtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localtion.swift; sourceTree = "<group>"; };
+		FA84E7482BB21D710083AEDB /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		FA84E74B2BB224E40083AEDB /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		FA84E74D2BB2287D0083AEDB /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,7 @@
 		FA84E7352BB207890083AEDB /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				FA84E74A2BB224D70083AEDB /* Model */,
 				FA84E7342BB1FCAA0083AEDB /* View */,
 				FA84E7362BB207AE0083AEDB /* ViewModel */,
 			);
@@ -169,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				FA84E73A2BB20B140083AEDB /* NetworkManager.swift */,
+				FA84E7482BB21D710083AEDB /* Endpoint.swift */,
+				FA84E74D2BB2287D0083AEDB /* Errors.swift */,
 			);
 			path = NetworkAPI;
 			sourceTree = "<group>";
@@ -194,8 +205,17 @@
 			isa = PBXGroup;
 			children = (
 				FA84E73F2BB212650083AEDB /* Environment.swift */,
+				FA84E7462BB21BBB0083AEDB /* Localtion.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FA84E74A2BB224D70083AEDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA84E74B2BB224E40083AEDB /* Weather.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,11 +350,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA84E74C2BB224E40083AEDB /* Weather.swift in Sources */,
+				FA84E7492BB21D710083AEDB /* Endpoint.swift in Sources */,
 				FA84E73B2BB20B140083AEDB /* NetworkManager.swift in Sources */,
 				FA4E97202BB1F26F006C0F36 /* WeatherView.swift in Sources */,
 				FA84E7382BB207C20083AEDB /* WeatherViewModel.swift in Sources */,
 				FA4E971E2BB1F26F006C0F36 /* ForecastOOKApp.swift in Sources */,
 				FA84E7402BB212650083AEDB /* Environment.swift in Sources */,
+				FA84E74E2BB2287D0083AEDB /* Errors.swift in Sources */,
+				FA84E7472BB21BBB0083AEDB /* Localtion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
