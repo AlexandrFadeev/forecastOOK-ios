@@ -14,6 +14,7 @@
 		FA4E972F2BB1F270006C0F36 /* ForecastOOKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E972E2BB1F270006C0F36 /* ForecastOOKTests.swift */; };
 		FA4E97392BB1F270006C0F36 /* ForecastOOKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E97382BB1F270006C0F36 /* ForecastOOKUITests.swift */; };
 		FA4E973B2BB1F270006C0F36 /* ForecastOOKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E973A2BB1F270006C0F36 /* ForecastOOKUITestsLaunchTests.swift */; };
+		FA84E7332BB1FAF50083AEDB /* API-Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA84E7322BB1FAF50083AEDB /* API-Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		FA4E97342BB1F270006C0F36 /* ForecastOOKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecastOOKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4E97382BB1F270006C0F36 /* ForecastOOKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastOOKUITests.swift; sourceTree = "<group>"; };
 		FA4E973A2BB1F270006C0F36 /* ForecastOOKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastOOKUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA84E7322BB1FAF50083AEDB /* API-Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "API-Keys.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				FA4E971F2BB1F26F006C0F36 /* ContentView.swift */,
 				FA4E97212BB1F270006C0F36 /* Assets.xcassets */,
 				FA4E97232BB1F270006C0F36 /* Preview Content */,
+				FA84E7322BB1FAF50083AEDB /* API-Keys.plist */,
 			);
 			path = ForecastOOK;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA4E97252BB1F270006C0F36 /* Preview Assets.xcassets in Resources */,
+				FA84E7332BB1FAF50083AEDB /* API-Keys.plist in Resources */,
 				FA4E97222BB1F270006C0F36 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +429,7 @@
 				DEVELOPMENT_TEAM = 98VX8WBFD6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to fetch weather data according to your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +459,7 @@
 				DEVELOPMENT_TEAM = 98VX8WBFD6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to fetch weather data according to your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
