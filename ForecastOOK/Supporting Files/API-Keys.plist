@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>WeatherAPIKey</key>
+	<key>apiKey</key>
 	<string>cdf9f6ff0df23d3687467328722691e0</string>
 </dict>
 </plist>
