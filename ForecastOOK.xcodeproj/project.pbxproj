@@ -100,12 +100,12 @@
 		FA4E971C2BB1F26F006C0F36 /* ForecastOOK */ = {
 			isa = PBXGroup;
 			children = (
-				FA4E971D2BB1F26F006C0F36 /* ForecastOOKApp.swift */,
+				FA84E73D2BB211EB0083AEDB /* App */,
 				FA84E7392BB20AF40083AEDB /* NetworkAPI */,
 				FA84E7352BB207890083AEDB /* Weather */,
 				FA4E97212BB1F270006C0F36 /* Assets.xcassets */,
 				FA4E97232BB1F270006C0F36 /* Preview Content */,
-				FA84E7322BB1FAF50083AEDB /* API-Keys.plist */,
+				FA84E73C2BB211BB0083AEDB /* Supporting Files */,
 			);
 			path = ForecastOOK;
 			sourceTree = "<group>";
@@ -166,6 +166,22 @@
 				FA84E73A2BB20B140083AEDB /* NetworkManager.swift */,
 			);
 			path = NetworkAPI;
+			sourceTree = "<group>";
+		};
+		FA84E73C2BB211BB0083AEDB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA84E7322BB1FAF50083AEDB /* API-Keys.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA84E73D2BB211EB0083AEDB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FA4E971D2BB1F26F006C0F36 /* ForecastOOKApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
