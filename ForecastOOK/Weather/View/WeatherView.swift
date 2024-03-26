@@ -12,15 +12,22 @@ struct WeatherView: View {
     @StateObject private var viewModel = WeatherViewModel()
     
     var body: some View {
-        Text(viewModel.weatherResponse?.weather?.condition ?? "Failed")
-            .task {
-                await viewModel.fetchWeather(
-                    for: Location(
-                        latitude: 47.0245117,
-                        longitude: 28.8322923
-                    )
-                )
+        VStack {
+            if let weather = viewModel.weatherResponse?.weather {
+                Text(viewModel.weatherResponse?.weather.condition ?? "Error")
+                
+            } else {
+                Text("Error")
+                    .task {
+                        await viewModel.fetchWeather(
+                            for: Location(
+                                latitude: 47.0245117,
+                                longitude: 28.8322923
+                            )
+                        )
+                    }
             }
+        }
     }
 }
 

@@ -23,8 +23,6 @@ final class WeatherViewModel: ObservableObject {
         } catch {
             shouldShowError = true
             errorMessage = error.localizedDescription
-            
-            debugPrint("error: \(error.localizedDescription)")
         }
     }
 }

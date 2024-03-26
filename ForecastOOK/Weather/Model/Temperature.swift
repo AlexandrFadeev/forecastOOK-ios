@@ -17,11 +17,4 @@ struct Temperature: Decodable {
         case minTemperature = "temp_min"
         case maxTemperature = "temp_max"
     }
-    
-    init(from decoder: any Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.temperature = try container.decode(Double.self, forKey: .temperature)
-        self.minTemperature = try container.decode(Double.self, forKey: .minTemperature)
-        self.maxTemperature = try container.decode(Double.self, forKey: .maxTemperature)
-    }
 }
