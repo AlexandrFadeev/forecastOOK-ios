@@ -24,6 +24,7 @@
 		FA84E74C2BB224E40083AEDB /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84E74B2BB224E40083AEDB /* Weather.swift */; };
 		FA84E74E2BB2287D0083AEDB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84E74D2BB2287D0083AEDB /* Errors.swift */; };
 		FAA526342BB24EBE00AE2046 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA526332BB24EBD00AE2046 /* WeatherResponse.swift */; };
+		FAA526372BB2AA6A00AE2046 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA526362BB2AA6A00AE2046 /* Temperature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		FA84E74D2BB2287D0083AEDB /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		FA84E74F2BB235AB0083AEDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FAA526332BB24EBD00AE2046 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		FAA526362BB2AA6A00AE2046 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				FA84E74B2BB224E40083AEDB /* Weather.swift */,
+				FAA526362BB2AA6A00AE2046 /* Temperature.swift */,
 				FAA526352BB24EE200AE2046 /* Response */,
 			);
 			path = Model;
@@ -369,6 +372,7 @@
 				FA84E73B2BB20B140083AEDB /* NetworkManager.swift in Sources */,
 				FA4E97202BB1F26F006C0F36 /* WeatherView.swift in Sources */,
 				FA84E7382BB207C20083AEDB /* WeatherViewModel.swift in Sources */,
+				FAA526372BB2AA6A00AE2046 /* Temperature.swift in Sources */,
 				FA4E971E2BB1F26F006C0F36 /* ForecastOOKApp.swift in Sources */,
 				FA84E7402BB212650083AEDB /* Environment.swift in Sources */,
 				FA84E74E2BB2287D0083AEDB /* Errors.swift in Sources */,

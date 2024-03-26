@@ -9,22 +9,16 @@ import Foundation
 
 struct WeatherResponse: Decodable {
     let weather: Weather?
-    let temperature: Double
+    let temperature: Temperature
     
     enum CodingKeys: String, CodingKey {
         case weather
-        case main
-    }
-    
-    enum TemperatureKeys: String, CodingKey {
-        case temperature = "temp"
+        case temperature = "main"
     }
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let temperatureContainer = try container.nestedContainer(keyedBy: TemperatureKeys.self, forKey: .main)
-        
-        weather = try container.decode([Weather].self, forKey: .weather).first
-        temperature = try temperatureContainer.decode(Double.self, forKey: .temperature)
+        self.weather = try container.decodeIfPresent([Weather].self, forKey: .weather)?.first
+        self.temperature = try container.decode(Temperature.self, forKey: .temperature)
     }
 }
