@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WeatherView: View {
     
-    @ObservedObject private var viewModel = WeatherViewModel()
+    @StateObject private var viewModel = WeatherViewModel()
     
     var body: some View {
         Text(viewModel.weatherResponse?.weather?.condition ?? "Failed")

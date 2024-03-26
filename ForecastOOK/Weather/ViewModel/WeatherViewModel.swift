@@ -11,9 +11,9 @@ import Combine
 @MainActor
 final class WeatherViewModel: ObservableObject {
     
-    @Published private(set) var weatherResponse: WeatherResponse?
-    @Published private(set) var shouldShowError = false
-    @Published private(set) var errorMessage: String?
+    @Published var weatherResponse: WeatherResponse?
+    @Published var shouldShowError = false
+    @Published var errorMessage: String?
     
     private var networkManager = NetworkManager<WeatherResponse>()
     
