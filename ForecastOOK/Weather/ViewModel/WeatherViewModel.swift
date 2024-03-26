@@ -8,12 +8,8 @@
 import Foundation
 import Combine
 
-protocol WeatherViewModelable: ObservableObject {
-    func fetchWeather(for location: Location) async
-}
-
 @MainActor
-final class WeatherViewModel: WeatherViewModelable {
+final class WeatherViewModel: ObservableObject {
     
     @Published private(set) var weatherResponse: WeatherResponse?
     @Published private(set) var shouldShowError = false
