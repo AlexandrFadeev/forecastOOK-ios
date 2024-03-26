@@ -9,25 +9,21 @@ import SwiftUI
 
 struct WeatherView: View {
     
-    private let viewModel: WeatherViewModelable
-    
-    init(viewModel: WeatherViewModelable) {
-        self.viewModel = viewModel
-    }
+    @ObservedObject private var viewModel = WeatherViewModel()
     
     var body: some View {
-        Text("Weather")
-            .onAppear(perform: {
-                viewModel.fetchWeather(
+        Text(viewModel.weatherResponse?.weather?.condition ?? "Failed")
+            .task {
+                await viewModel.fetchWeather(
                     for: Location(
                         latitude: 47.0245117,
                         longitude: 28.8322923
                     )
                 )
-            })
+            }
     }
 }
 
 #Preview {
-    WeatherView(viewModel: WeatherViewModel())
+    WeatherView()
 }

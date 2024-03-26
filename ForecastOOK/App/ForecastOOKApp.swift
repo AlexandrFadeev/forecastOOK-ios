@@ -11,7 +11,7 @@ import SwiftUI
 struct ForecastOOKApp: App {
     var body: some Scene {
         WindowGroup {
-            WeatherView(viewModel: WeatherViewModel())
+            WeatherView()
         }
     }
 }

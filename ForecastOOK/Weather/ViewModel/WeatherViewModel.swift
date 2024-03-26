@@ -8,15 +8,27 @@
 import Foundation
 import Combine
 
-protocol WeatherViewModelable {
-    func fetchWeather(for location: Location)
+protocol WeatherViewModelable: ObservableObject {
+    func fetchWeather(for location: Location) async
 }
 
-final class WeatherViewModel: WeatherViewModelable, ObservableObject {
+@MainActor
+final class WeatherViewModel: WeatherViewModelable {
     
-    private let networkManager = NetworkManager<WeatherResponse>()
+    @Published private(set) var weatherResponse: WeatherResponse?
+    @Published private(set) var shouldShowError = false
+    @Published private(set) var errorMessage: String?
     
-    func fetchWeather(for location: Location) {
-        networkManager.fetch(endpoint: .weather(for: location))
+    private var networkManager = NetworkManager<WeatherResponse>()
+    
+    func fetchWeather(for location: Location) async {
+        do {
+            weatherResponse = try await networkManager.fetch(endpoint: .weather(for: location))
+        } catch {
+            shouldShowError = true
+            errorMessage = error.localizedDescription
+            
+            debugPrint("error: \(error.localizedDescription)")
+        }
     }
 }
