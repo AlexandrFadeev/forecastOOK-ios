@@ -14,7 +14,11 @@ struct WeatherView: View {
     
     var body: some View {
         VStack {
-            WelcomeView().environmentObject(locationManager)
+            if let currentLocation = locationManager.location {
+                Text("your location is: \(currentLocation.latitude) \(currentLocation.longitude)")
+            } else {
+                WelcomeView().environmentObject(locationManager)
+            }
         }
     }
 }

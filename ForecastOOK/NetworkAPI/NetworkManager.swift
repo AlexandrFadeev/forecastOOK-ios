@@ -15,13 +15,13 @@ final class NetworkManager<T: Decodable> {
         
         guard let response = response as? HTTPURLResponse,
               response.statusCode >= 200 || response.statusCode <= 300 else {
-            throw WeatherError.invalidStatusCode
+            throw WeatherApiError.invalidStatusCode
         }
         
         do {
             return try JSONDecoder().decode(T.self, from: data)
         }  catch {
-            throw WeatherError.decodingFailure
+            throw WeatherApiError.decodingFailure
         }
     }
 }
