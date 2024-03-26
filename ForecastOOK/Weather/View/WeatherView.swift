@@ -17,6 +17,14 @@ struct WeatherView: View {
     
     var body: some View {
         Text("Weather")
+            .onAppear(perform: {
+                viewModel.fetchWeather(
+                    for: Location(
+                        latitude: 47.0245117,
+                        longitude: 28.8322923
+                    )
+                )
+            })
     }
 }
 

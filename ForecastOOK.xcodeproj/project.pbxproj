@@ -23,6 +23,7 @@
 		FA84E7492BB21D710083AEDB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84E7482BB21D710083AEDB /* Endpoint.swift */; };
 		FA84E74C2BB224E40083AEDB /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84E74B2BB224E40083AEDB /* Weather.swift */; };
 		FA84E74E2BB2287D0083AEDB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84E74D2BB2287D0083AEDB /* Errors.swift */; };
+		FAA526342BB24EBE00AE2046 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA526332BB24EBD00AE2046 /* WeatherResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		FA84E7482BB21D710083AEDB /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		FA84E74B2BB224E40083AEDB /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		FA84E74D2BB2287D0083AEDB /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		FA84E74F2BB235AB0083AEDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FAA526332BB24EBD00AE2046 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		FA4E971C2BB1F26F006C0F36 /* ForecastOOK */ = {
 			isa = PBXGroup;
 			children = (
+				FA84E74F2BB235AB0083AEDB /* Info.plist */,
 				FA84E73D2BB211EB0083AEDB /* App */,
 				FA84E7392BB20AF40083AEDB /* NetworkAPI */,
 				FA84E73E2BB2124E0083AEDB /* Helpers */,
@@ -214,8 +218,17 @@
 			isa = PBXGroup;
 			children = (
 				FA84E74B2BB224E40083AEDB /* Weather.swift */,
+				FAA526352BB24EE200AE2046 /* Response */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FAA526352BB24EE200AE2046 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				FAA526332BB24EBD00AE2046 /* WeatherResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA84E74C2BB224E40083AEDB /* Weather.swift in Sources */,
+				FAA526342BB24EBE00AE2046 /* WeatherResponse.swift in Sources */,
 				FA84E7492BB21D710083AEDB /* Endpoint.swift in Sources */,
 				FA84E73B2BB20B140083AEDB /* NetworkManager.swift in Sources */,
 				FA4E97202BB1F26F006C0F36 /* WeatherView.swift in Sources */,
@@ -525,6 +539,7 @@
 				DEVELOPMENT_TEAM = 98VX8WBFD6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ForecastOOK/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to fetch weather data according to your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -555,6 +570,7 @@
 				DEVELOPMENT_TEAM = 98VX8WBFD6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ForecastOOK/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to fetch weather data according to your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
