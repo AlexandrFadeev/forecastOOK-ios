@@ -32,8 +32,11 @@ final class WeatherViewModel: ObservableObject {
         String(format: "%.0f°", temperature)
     }
     
-    func formatHighTemperatureString(from temperature: Double) -> String {
-        let temperature = formatTemperatureString(from: temperature)
-        return String(format: "H", <#T##arguments: any CVarArg...##any CVarArg#>)
+    func formatMaxTemperatureString(from temperature: Double) -> String {
+        "H: \(formatTemperatureString(from: temperature))"
+    }
+    
+    func formatMinTemperatureString(form temperature: Double) -> String {
+        "L: \(formatTemperatureString(from: temperature))"
     }
 }

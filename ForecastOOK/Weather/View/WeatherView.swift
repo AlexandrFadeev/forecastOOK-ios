@@ -31,7 +31,16 @@ struct WeatherView: View {
                         Text(response.weather.condition)
                             .font(.title3)
                         HStack {
-                            
+                            Text(
+                                viewModel.formatMaxTemperatureString(
+                                    from: response.temperature.maxTemperature
+                                )
+                            )
+                            Text(
+                                viewModel.formatMinTemperatureString(
+                                    form: response.temperature.minTemperature
+                                )
+                            )
                         }
                     }
                     
