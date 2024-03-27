@@ -192,7 +192,7 @@
 				FA84E74F2BB235AB0083AEDB /* Info.plist */,
 				FA84E73D2BB211EB0083AEDB /* App */,
 				FAA526392BB2FE7A00AE2046 /* LocationManager */,
-				FA84E7392BB20AF40083AEDB /* NetworkAPI */,
+				FA84E7392BB20AF40083AEDB /* Network */,
 				FA84E73E2BB2124E0083AEDB /* Helpers */,
 				FAA526422BB34A8700AE2046 /* WeatherContainer */,
 				FA84E7352BB207890083AEDB /* Weather */,
@@ -257,14 +257,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		FA84E7392BB20AF40083AEDB /* NetworkAPI */ = {
+		FA84E7392BB20AF40083AEDB /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				FAA526352BB24EE200AE2046 /* Response */,
 				FA84E73A2BB20B140083AEDB /* NetworkManager.swift */,
 				FA84E7482BB21D710083AEDB /* Endpoint.swift */,
 			);
-			path = NetworkAPI;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FA84E73C2BB211BB0083AEDB /* Supporting Files */ = {
