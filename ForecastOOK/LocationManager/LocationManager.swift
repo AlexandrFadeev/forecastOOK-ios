@@ -11,7 +11,7 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
     private let manager = CLLocationManager()
     
     @Published var location: CLLocationCoordinate2D?
-    
+    @Published var locationError: LocationError?
     
     override init() {
         super.init()
@@ -20,7 +20,11 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
     }
     
     func requestLocation() {
-        manager.requestLocation()
+        if manager.authorizationStatus == .notDetermined {
+            manager.requestLocation()
+        } else if manager.authorizationStatus == .denied {
+            locationError = LocationError.permissionAccessFailed
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -28,6 +32,8 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
-        debugPrint("location manager failed with error: \(error)")
+        if manager.authorizationStatus == .denied {
+            locationError = LocationError.permissionAccessFailed
+        }
     }
 }

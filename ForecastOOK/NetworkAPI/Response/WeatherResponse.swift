@@ -10,10 +10,12 @@ import Foundation
 struct WeatherResponse: Decodable {
     let weather: Weather
     let temperature: Temperature
+    let countryName: String
     
     enum CodingKeys: String, CodingKey {
         case weather
         case temperature = "main"
+        case countryName = "name"
     }
     
     init(from decoder: any Decoder) throws {
@@ -25,5 +27,6 @@ struct WeatherResponse: Decodable {
         
         weather = decodedWeather
         temperature = try container.decode(Temperature.self, forKey: .temperature)
+        countryName = try container.decode(String.self, forKey: .countryName)
     }
 }

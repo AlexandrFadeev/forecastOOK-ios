@@ -24,4 +24,14 @@ enum WeatherApiError: LocalizedError {
             return message
         }
     }
+    
+    var recoverySuggestion: String? {
+        switch self {
+        case .decodingFailure, .custom(_):
+            return "Please try again later"
+            
+        case .invalidStatusCode:
+            return "Please check your internet connection, or server is not working. Please try again later"
+        }
+    }
 }

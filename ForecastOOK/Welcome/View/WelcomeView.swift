@@ -27,7 +27,7 @@ struct WelcomeView: View {
             .foregroundColor(.white)
         }
         .multilineTextAlignment(.center)
-        .frame(width: .infinity, height: .infinity)
+        .ignoresSafeArea(.all)
     }
 }
 
