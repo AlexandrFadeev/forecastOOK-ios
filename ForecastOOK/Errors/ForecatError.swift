@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum WeatherApiError: LocalizedError {
+enum ForecatError: LocalizedError {
     case decodingFailure
     case invalidStatusCode
     case custom(String)

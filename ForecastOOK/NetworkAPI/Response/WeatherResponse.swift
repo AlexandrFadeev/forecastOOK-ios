@@ -22,7 +22,7 @@ struct WeatherResponse: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         guard let decodedWeather = try container.decodeIfPresent([Weather].self, forKey: .weather)?.first else {
-            throw WeatherApiError.decodingFailure
+            throw ForecatError.decodingFailure
         }
         
         weather = decodedWeather

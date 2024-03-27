@@ -19,36 +19,51 @@ struct WeatherView: View {
     
     var body: some View {
         if let response = viewModel.weatherResponse {
-            ScrollView {
-                VStack {
-                    Text("My Location")
-                        .font(.largeTitle)
-                    
-                    Text(viewModel.formatTemperatureString(from: response.temperature.temperature))
-                        .font(.system(size: 120, weight: .light, design: Font.Design.default))
-                    
+            GeometryReader { geometry in
+                ScrollView {
                     VStack {
-                        Text(response.weather.condition)
-                            .font(.title3)
-                        HStack {
-                            Text(
-                                viewModel.formatMaxTemperatureString(
-                                    from: response.temperature.maxTemperature
-                                )
-                            )
-                            Text(
-                                viewModel.formatMinTemperatureString(
-                                    form: response.temperature.minTemperature
-                                )
-                            )
+                        Text("My Location")
+                            .font(.largeTitle)
+                        
+                        Text(response.temperature.temperature.formatTemperatureString)
+                            .font(.system(size: 120, weight: .light, design: Font.Design.default))
+                        
+                        VStack {
+                            Text(response.weather.condition)
+                                .font(.title3)
+                            HStack {
+                                Text(response.temperature.maxTemperature.formatMaxTemperatureString)
+                                Text(response.temperature.minTemperature.formatMinTemperatureString)
+                            }
                         }
+                        .padding(.bottom)
+                        ForecastView(
+                            location: location,
+                            weatherConditionIconCode: response.weather.iconName,
+                            temperature: response.temperature
+                        )
+                        
+                        Spacer()
                     }
-                    
-                    
-                    Spacer()
+                    .padding(EdgeInsets(top: 60, leading: 0.0, bottom: 0.0, trailing: 0.0))
+                    .frame(height: geometry.size.height)
                 }
-                .padding(EdgeInsets(top: 60, leading: 0.0, bottom: 0.0, trailing: 0.0))
+                .refreshable {
+                    await viewModel.fetchWeather(for: location)
+                }
+                .background(
+                    LinearGradient(
+                        gradient: Gradient(colors: [.blue, Color("liteBlue")]),
+                        startPoint: .topLeading, endPoint: .bottomTrailing)
+                )
+                .foregroundColor(.white)
+                .onAppear {
+                    UIRefreshControl.appearance().tintColor = .white
+                }
+                
+                
             }
+            
             
         } else {
             LoaderView()

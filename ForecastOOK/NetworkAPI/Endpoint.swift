@@ -33,27 +33,39 @@ extension Endpoint {
 }
 
 extension Endpoint {
+    
+    private static func commonURLQueryItems(for location: Location) -> [URLQueryItem] {
+        [
+            URLQueryItem(
+                name: QueryName.latitude.rawValue,
+                value: "\(location.latitude)"
+            ),
+            URLQueryItem(
+                name: QueryName.longitude.rawValue,
+                value: "\(location.longitude)"
+            ),
+            URLQueryItem(
+                name: QueryName.units.rawValue,
+                value: QueryValue.metric.rawValue
+            ),
+            URLQueryItem(
+                name: QueryName.appID.rawValue,
+                value: environment.apiKey
+            )
+        ]
+    }
+    
     static func weather(for location: Location) -> Self {
         Endpoint(
             path: "data/2.5/weather",
-            queryItems: [
-                URLQueryItem(
-                    name: QueryName.latitude.rawValue,
-                    value: "\(location.latitude)"
-                ),
-                URLQueryItem(
-                    name: QueryName.longitude.rawValue,
-                    value: "\(location.longitude)"
-                ),
-                URLQueryItem(
-                    name: QueryName.units.rawValue,
-                    value: QueryValue.metric.rawValue
-                ),
-                URLQueryItem(
-                    name: QueryName.appID.rawValue,
-                    value: environment.apiKey
-                )
-            ]
+            queryItems: commonURLQueryItems(for: location)
+        )
+    }
+    
+    static func forecast(for location: Location) -> Self {
+        Endpoint(
+            path: "data/2.5/forecast",
+            queryItems: commonURLQueryItems(for: location)
         )
     }
 }
